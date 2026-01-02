@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emotional Check-In | Greatspire</title>
-    <meta name="description" content="Take a gentle self-discovery quiz to understand your emotional state and discover how GreatSpire practitioners can support your journey.">
+    <title>Emotional Wellness Assessment | GreatSpire</title>
+    <meta name="description" content="A professional self-assessment tool designed to help you understand your emotional landscape and connect with qualified wellness practitioners.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -22,17 +22,19 @@
                 <div class="logo-glow"></div>
                 <h1 class="logo">Great<span>Spire</span></h1>
             </div>
-            <h2 class="welcome-title">A Gentle Check-In With Yourself</h2>
-            <p class="welcome-subtitle">Take a few moments to reflect on how you're really feeling. This isn't a test—it's a space to understand yourself better and explore what support might help.</p>
+            <h2 class="welcome-title">Emotional Wellness Assessment</h2>
+            <p class="welcome-subtitle">This brief, evidence-informed assessment is designed to help you gain clarity on your current emotional state and identify areas where professional support may be beneficial.</p>
             <button class="btn-primary pulse" id="start-btn">
-                <span>Begin Your Reflection</span>
+                <span>Begin Assessment</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M5 12h14m-7-7 7 7-7 7"/>
                 </svg>
             </button>
             <div class="trust-badge">
-                <span class="heart">💜</span>
-                <span>A safe space for self-discovery</span>
+                <svg class="trust-badge-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                <span>Confidential self-discovery resource</span>
             </div>
         </section>
 
@@ -43,7 +45,7 @@
                 <div class="progress-bar">
                     <div class="progress-fill" id="progress-fill"></div>
                 </div>
-                <span class="progress-text" id="progress-text">1 of 12</span>
+                <span class="progress-text" id="progress-text">1 of 6</span>
             </div>
 
             <!-- Questions Container - Dynamically populated by JS -->
@@ -57,7 +59,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M19 12H5m7-7-7 7 7 7"/>
                     </svg>
-                    Back
+                    Previous
                 </button>
             </div>
         </section>
