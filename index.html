@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotional Check-In | Greatspire</title>
+    <meta name="description" content="Take a gentle self-discovery quiz to understand your emotional state and discover how GreatSpire practitioners can support your journey.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background Particles -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Welcome Screen -->
+        <section class="screen active" id="welcome-screen">
+            <div class="logo-container">
+                <div class="logo-glow"></div>
+                <h1 class="logo">Great<span>Spire</span></h1>
+            </div>
+            <h2 class="welcome-title">A Gentle Check-In With Yourself</h2>
+            <p class="welcome-subtitle">Take a few moments to reflect on how you're really feeling. This isn't a test—it's a space to understand yourself better and explore what support might help.</p>
+            <button class="btn-primary pulse" id="start-btn">
+                <span>Begin Your Reflection</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14m-7-7 7 7-7 7"/>
+                </svg>
+            </button>
+            <div class="trust-badge">
+                <span class="heart">💜</span>
+                <span>A safe space for self-discovery</span>
+            </div>
+        </section>
+
+        <!-- Quiz Screen -->
+        <section class="screen" id="quiz-screen">
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <span class="progress-text" id="progress-text">1 of 12</span>
+            </div>
+
+            <!-- Questions Container - Dynamically populated by JS -->
+            <div class="questions-wrapper" id="questions-wrapper">
+                <!-- Questions are rendered here by script.js -->
+            </div>
+
+            <!-- Navigation -->
+            <div class="quiz-nav">
+                <button class="btn-secondary" id="back-btn" disabled>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5m7-7-7 7 7 7"/>
+                    </svg>
+                    Back
+                </button>
+            </div>
+        </section>
+
+        <!-- Results Screen -->
+        <section class="screen" id="results-screen">
+            <div class="results-container">
+                <!-- Results are rendered here by script.js -->
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
