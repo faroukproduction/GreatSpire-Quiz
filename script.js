@@ -90,47 +90,47 @@ const QUESTIONS = [
 const STRUGGLE_CATEGORIES = {
     energy: {
         name: "Energy & Vitality",
-        description: "Boosting your daily energy and feeling more alive",
+        description: "Boosting your daily energy and feeling more alive.",
         icon: "zap"
     },
     burnout: {
         name: "Rest & Recovery",
-        description: "Finding balance and preventing burnout",
+        description: "Finding balance and preventing burnout.",
         icon: "battery"
     },
     self_care: {
         name: "Self-Care",
-        description: "Making time for yourself and building healthy routines",
+        description: "Making time for yourself and building healthy routines.",
         icon: "heart"
     },
     purpose: {
         name: "Purpose & Direction",
-        description: "Gaining clarity on your path and goals",
+        description: "Gaining clarity on your path and goals.",
         icon: "compass"
     },
     growth: {
         name: "Personal Growth",
-        description: "Developing new skills and becoming your best self",
+        description: "Developing new skills and becoming your best self.",
         icon: "sparkles"
     },
     connection: {
         name: "Community & Connection",
-        description: "Building meaningful relationships and finding your tribe",
+        description: "Building meaningful relationships and finding your tribe.",
         icon: "users"
     },
     lifestyle: {
         name: "Lifestyle Design",
-        description: "Creating habits and routines that support your goals",
+        description: "Creating habits and routines that support your goals.",
         icon: "sunrise"
     },
     balance: {
         name: "Life Balance",
-        description: "Harmonizing work, health, and personal life",
+        description: "Harmonizing work, health, and personal life.",
         icon: "activity"
     },
     focus: {
         name: "Focus Area",
-        description: "Your primary area of interest for improvement",
+        description: "Your primary area of interest for improvement.",
         icon: "target"
     }
 };
@@ -649,36 +649,36 @@ function getPractitionerSuggestions(profile) {
 
     const practitionerMap = {
         energy: [
-            { iconSvg: ICONS.zap, name: 'Vitality Coach', help: 'Boost your energy and feel more alive every day' },
-            { iconSvg: ICONS.leaf, name: 'Holistic Nutritionist', help: 'Fuel your body for peak performance' }
+            { iconSvg: ICONS.zap, name: 'Vitality Coach', help: 'Boost your energy and feel more alive every day.' },
+            { iconSvg: ICONS.leaf, name: 'Holistic Nutritionist', help: 'Fuel your body for peak performance.' }
         ],
         burnout: [
-            { iconSvg: ICONS.wellness, name: 'Wellness Coach', help: 'Build sustainable routines and find your balance' },
-            { iconSvg: ICONS.moon, name: 'Rest & Recovery Specialist', help: 'Master the art of recharging' }
+            { iconSvg: ICONS.wellness, name: 'Wellness Coach', help: 'Build sustainable routines and find your balance.' },
+            { iconSvg: ICONS.moon, name: 'Rest & Recovery Specialist', help: 'Master the art of recharging.' }
         ],
         self_care: [
-            { iconSvg: ICONS.heart, name: 'Self-Care Guide', help: 'Create routines that nourish mind, body & soul' },
-            { iconSvg: ICONS.sparkles, name: 'Lifestyle Designer', help: 'Build habits that support your best life' }
+            { iconSvg: ICONS.heart, name: 'Self-Care Guide', help: 'Create routines that nourish mind, body & soul.' },
+            { iconSvg: ICONS.sparkles, name: 'Lifestyle Designer', help: 'Build habits that support your best life.' }
         ],
         purpose: [
-            { iconSvg: ICONS.compass, name: 'Life Purpose Coach', help: 'Gain clarity on your path and goals' },
-            { iconSvg: ICONS.target, name: 'Goal Achievement Coach', help: 'Turn your vision into reality' }
+            { iconSvg: ICONS.compass, name: 'Life Purpose Coach', help: 'Gain clarity on your path and goals.' },
+            { iconSvg: ICONS.target, name: 'Goal Achievement Coach', help: 'Turn your vision into reality.' }
         ],
         growth: [
-            { iconSvg: ICONS.sparkles, name: 'Personal Development Coach', help: 'Level up your mindset and skills' },
-            { iconSvg: ICONS.insights, name: 'Mindset Mentor', help: 'Break through limits and unlock potential' }
+            { iconSvg: ICONS.sparkles, name: 'Personal Development Coach', help: 'Level up your mindset and skills.' },
+            { iconSvg: ICONS.insights, name: 'Mindset Mentor', help: 'Break through limits and unlock potential.' }
         ],
         connection: [
-            { iconSvg: ICONS.users, name: 'Community Coach', help: 'Build meaningful relationships and find your tribe' },
-            { iconSvg: ICONS.heart, name: 'Connection Specialist', help: 'Deepen relationships and social wellbeing' }
+            { iconSvg: ICONS.users, name: 'Community Coach', help: 'Build meaningful relationships and find your tribe.' },
+            { iconSvg: ICONS.heart, name: 'Connection Specialist', help: 'Deepen relationships and social wellbeing.' }
         ],
         lifestyle: [
-            { iconSvg: ICONS.sunrise, name: 'Habit Coach', help: 'Design routines that stick and get results' },
-            { iconSvg: ICONS.dumbbell, name: 'Fitness & Wellness Coach', help: 'Transform your body and health' }
+            { iconSvg: ICONS.sunrise, name: 'Habit Coach', help: 'Design routines that stick and get results.' },
+            { iconSvg: ICONS.dumbbell, name: 'Fitness & Wellness Coach', help: 'Transform your body and health.' }
         ],
         balance: [
-            { iconSvg: ICONS.activity, name: 'Life Balance Coach', help: 'Harmonize work, health, and personal life' },
-            { iconSvg: ICONS.wellness, name: 'Holistic Practitioner', help: 'Address wellness from every angle' }
+            { iconSvg: ICONS.activity, name: 'Life Balance Coach', help: 'Harmonize work, health, and personal life.' },
+            { iconSvg: ICONS.wellness, name: 'Holistic Practitioner', help: 'Address wellness from every angle.' }
         ]
     };
 
@@ -686,8 +686,8 @@ function getPractitionerSuggestions(profile) {
         suggestions.push(...practitionerMap[primaryStruggle]);
     } else {
         suggestions.push(
-            { iconSvg: ICONS.wellness, name: 'Wellness Coach', help: 'Holistic support for your journey' },
-            { iconSvg: ICONS.sparkles, name: 'Personal Growth Guide', help: 'Unlock your full potential' }
+            { iconSvg: ICONS.wellness, name: 'Wellness Coach', help: 'Holistic support for your journey.' },
+            { iconSvg: ICONS.sparkles, name: 'Personal Growth Guide', help: 'Unlock your full potential.' }
         );
     }
 
