@@ -1,21 +1,23 @@
 /* ===== CSS Custom Properties ===== */
 :root {
-    /* Colors */
-    --primary-blue: #4F46E5;
-    --primary-purple: #9333EA;
-    --bg-dark: #0a0a1a;
-    --bg-card: rgba(20, 20, 40, 0.6);
-    --bg-card-hover: rgba(30, 30, 60, 0.8);
+    /* GreatSpire Brand Colors */
+    --primary-blue: #110BF4;
+    --primary-purple: #855CD6;
+    --accent-peach: #E5C3B3;
+    --bg-dark: #0a0a12;
+    --bg-card: rgba(20, 20, 45, 0.6);
+    --bg-card-hover: rgba(30, 30, 65, 0.8);
     --text-primary: #ffffff;
-    --text-secondary: rgba(255, 255, 255, 0.7);
-    --text-muted: rgba(255, 255, 255, 0.5);
+    --text-secondary: rgba(255, 255, 255, 0.75);
+    --text-muted: rgba(255, 255, 255, 0.55);
     --border-subtle: rgba(255, 255, 255, 0.1);
     --border-hover: rgba(255, 255, 255, 0.2);
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-purple) 100%);
-    --gradient-bg: linear-gradient(180deg, #0a0a1a 0%, #1a0a2e 50%, #0a1a2e 100%);
-    --gradient-glow: radial-gradient(circle, rgba(147, 51, 234, 0.3) 0%, transparent 70%);
+    --gradient-primary: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-purple) 50%, var(--accent-peach) 100%);
+    --gradient-button: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-purple) 100%);
+    --gradient-bg: linear-gradient(180deg, #0a0a12 0%, #120a20 50%, #0a1020 100%);
+    --gradient-glow: radial-gradient(circle, rgba(133, 92, 214, 0.3) 0%, transparent 70%);
 
     /* Spacing */
     --container-max: 600px;
@@ -50,7 +52,7 @@ html {
 }
 
 body {
-    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--gradient-bg);
     color: var(--text-primary);
     min-height: 100vh;
@@ -74,14 +76,13 @@ body {
     position: absolute;
     width: 4px;
     height: 4px;
-    background: rgba(147, 51, 234, 0.6);
+    background: rgba(133, 92, 214, 0.6);
     border-radius: var(--radius-full);
     animation: float 15s infinite ease-in-out;
-    box-shadow: 0 0 10px rgba(147, 51, 234, 0.4);
+    box-shadow: 0 0 10px rgba(133, 92, 214, 0.4);
 }
 
 @keyframes float {
-
     0%,
     100% {
         transform: translateY(100vh) translateX(0) scale(0);
@@ -176,7 +177,6 @@ body {
 }
 
 @keyframes pulseGlow {
-
     0%,
     100% {
         opacity: 0.5;
@@ -204,10 +204,11 @@ body {
 }
 
 .welcome-title {
+    font-family: 'Merriweather', Georgia, serif;
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: var(--spacing-sm);
-    background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0.8));
+    background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0.85));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -230,9 +231,10 @@ body {
     font-size: 0.9rem;
 }
 
-.trust-badge .star,
-.trust-badge .heart {
-    color: #a855f7;
+.trust-badge-icon {
+    width: 20px;
+    height: 20px;
+    stroke: var(--primary-purple);
 }
 
 /* ===== Buttons ===== */
@@ -241,7 +243,7 @@ body {
     align-items: center;
     gap: var(--spacing-sm);
     padding: var(--spacing-md) var(--spacing-lg);
-    background: var(--gradient-primary);
+    background: var(--gradient-button);
     color: var(--text-primary);
     border: none;
     border-radius: var(--radius-lg);
@@ -272,7 +274,7 @@ body {
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 20px 40px rgba(147, 51, 234, 0.4);
+    box-shadow: 0 20px 40px rgba(133, 92, 214, 0.4);
 }
 
 .btn-primary.pulse {
@@ -280,14 +282,13 @@ body {
 }
 
 @keyframes buttonPulse {
-
     0%,
     100% {
-        box-shadow: 0 0 0 0 rgba(147, 51, 234, 0.5);
+        box-shadow: 0 0 0 0 rgba(133, 92, 214, 0.5);
     }
 
     50% {
-        box-shadow: 0 0 0 15px rgba(147, 51, 234, 0);
+        box-shadow: 0 0 0 15px rgba(133, 92, 214, 0);
     }
 }
 
@@ -344,8 +345,8 @@ body {
 
 .progress-fill {
     height: 100%;
-    width: 8.33%;
-    background: var(--gradient-primary);
+    width: 16.67%;
+    background: var(--gradient-button);
     border-radius: var(--radius-full);
     transition: width var(--transition-medium);
     position: relative;
@@ -427,26 +428,18 @@ body {
     }
 }
 
-.question-icon {
-    font-size: 3rem;
-    margin-bottom: var(--spacing-md);
-    animation: iconBounce 2s ease-in-out infinite;
-}
-
-@keyframes iconBounce {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
+.question-number {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-purple);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-sm);
 }
 
 .question-card h3 {
-    font-size: 1.5rem;
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: var(--spacing-lg);
     max-width: 90%;
@@ -479,21 +472,43 @@ body {
     backdrop-filter: blur(10px);
 }
 
+.option-letter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: rgba(133, 92, 214, 0.15);
+    border: 1px solid rgba(133, 92, 214, 0.3);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--primary-purple);
+    flex-shrink: 0;
+    transition: all var(--transition-fast);
+}
+
 .option:hover {
     background: var(--bg-card-hover);
     border-color: var(--primary-purple);
     transform: translateX(8px);
 }
 
-.option.selected {
-    background: linear-gradient(135deg, rgba(79, 70, 229, 0.2), rgba(147, 51, 234, 0.2));
+.option:hover .option-letter {
+    background: rgba(133, 92, 214, 0.25);
     border-color: var(--primary-purple);
-    box-shadow: 0 0 20px rgba(147, 51, 234, 0.2);
 }
 
-.option-icon {
-    font-size: 1.5rem;
-    flex-shrink: 0;
+.option.selected {
+    background: linear-gradient(135deg, rgba(17, 11, 244, 0.15), rgba(133, 92, 214, 0.2));
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 20px rgba(133, 92, 214, 0.2);
+}
+
+.option.selected .option-letter {
+    background: var(--gradient-button);
+    border-color: transparent;
+    color: white;
 }
 
 .option-text {
@@ -536,7 +551,6 @@ body {
 }
 
 @keyframes resultGlow {
-
     0%,
     100% {
         opacity: 0.6;
@@ -550,10 +564,12 @@ body {
 }
 
 .result-icon {
-    font-size: 4rem;
     position: relative;
     z-index: 1;
     animation: resultBounce 1s ease forwards;
+    width: 64px;
+    height: 64px;
+    stroke: var(--primary-purple);
 }
 
 @keyframes resultBounce {
@@ -573,6 +589,7 @@ body {
 }
 
 .result-title {
+    font-family: 'Merriweather', Georgia, serif;
     font-size: 1.8rem;
     font-weight: 600;
     background: var(--gradient-primary);
@@ -610,11 +627,11 @@ body {
 
 /* ===== Section Titles ===== */
 .section-title {
-    font-size: 1rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: var(--text-muted);
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     margin-bottom: var(--spacing-sm);
 }
 
@@ -647,7 +664,9 @@ body {
 }
 
 .struggle-icon {
-    font-size: 1.5rem;
+    width: 24px;
+    height: 24px;
+    stroke: var(--primary-purple);
 }
 
 .struggle-name {
@@ -667,7 +686,7 @@ body {
 
 .intensity-fill {
     height: 100%;
-    background: var(--gradient-primary);
+    background: var(--gradient-button);
     border-radius: var(--radius-full);
     transition: width 1s ease;
 }
@@ -697,15 +716,17 @@ body {
     align-items: center;
     gap: var(--spacing-xs);
     padding: var(--spacing-sm) var(--spacing-md);
-    background: linear-gradient(135deg, rgba(79, 70, 229, 0.15), rgba(147, 51, 234, 0.15));
-    border: 1px solid rgba(147, 51, 234, 0.3);
+    background: linear-gradient(135deg, rgba(17, 11, 244, 0.12), rgba(133, 92, 214, 0.15));
+    border: 1px solid rgba(133, 92, 214, 0.3);
     border-radius: var(--radius-full);
     font-size: 0.95rem;
     color: var(--text-primary);
 }
 
 .emotion-icon {
-    font-size: 1.1rem;
+    width: 18px;
+    height: 18px;
+    stroke: var(--primary-purple);
 }
 
 /* ===== Next Steps Section ===== */
@@ -729,8 +750,8 @@ body {
 .greatspire-brand-section {
     width: 100%;
     padding: var(--spacing-xl) var(--spacing-lg);
-    background: linear-gradient(135deg, rgba(79, 70, 229, 0.15), rgba(147, 51, 234, 0.2));
-    border: 1px solid rgba(147, 51, 234, 0.3);
+    background: linear-gradient(135deg, rgba(17, 11, 244, 0.12), rgba(133, 92, 214, 0.18));
+    border: 1px solid rgba(133, 92, 214, 0.3);
     border-radius: var(--radius-lg);
     animation: fadeInUp 0.6s ease 0.7s forwards;
     opacity: 0;
@@ -764,6 +785,7 @@ body {
 }
 
 .brand-tagline {
+    font-family: 'Merriweather', Georgia, serif;
     font-size: 1rem;
     color: var(--text-secondary);
     font-style: italic;
@@ -776,6 +798,7 @@ body {
 }
 
 .brand-message h3 {
+    font-family: 'Merriweather', Georgia, serif;
     font-size: 1.4rem;
     font-weight: 600;
     color: var(--text-primary);
@@ -822,12 +845,14 @@ body {
 
 .practitioner-type:hover {
     background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(147, 51, 234, 0.4);
+    border-color: rgba(133, 92, 214, 0.4);
     transform: translateX(4px);
 }
 
 .practitioner-icon {
-    font-size: 2rem;
+    width: 32px;
+    height: 32px;
+    stroke: var(--primary-purple);
     flex-shrink: 0;
 }
 
@@ -871,19 +896,70 @@ body {
     font-weight: bold;
 }
 
-/* Primary CTA */
-.cta-main {
+/* App Store Section */
+.app-download-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
     width: 100%;
-    max-width: 320px;
-    justify-content: center;
-    font-size: 1.15rem;
-    padding: var(--spacing-md) var(--spacing-lg);
-    box-shadow: 0 8px 30px rgba(147, 51, 234, 0.4);
 }
 
-.cta-main:hover {
-    box-shadow: 0 12px 40px rgba(147, 51, 234, 0.6);
-    transform: translateY(-4px);
+.app-download-title {
+    font-size: 1rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.app-store-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.app-store-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 12px 20px;
+    background: #000000;
+    color: #ffffff;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.app-store-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.app-store-btn svg {
+    width: 24px;
+    height: 24px;
+    fill: #ffffff;
+}
+
+.app-store-btn .btn-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.app-store-btn .btn-label {
+    font-size: 0.65rem;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.app-store-btn .btn-store {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.1;
 }
 
 /* Trust Signal */
@@ -948,7 +1024,7 @@ body {
     }
 
     .question-card h3 {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
     }
 
     .btn-primary {
@@ -976,11 +1052,20 @@ body {
         font-size: 0.85rem;
         padding: var(--spacing-xs) var(--spacing-sm);
     }
+
+    .app-store-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .app-store-btn {
+        justify-content: center;
+        width: 100%;
+    }
 }
 
 /* ===== Accessibility ===== */
 @media (prefers-reduced-motion: reduce) {
-
     *,
     *::before,
     *::after {
